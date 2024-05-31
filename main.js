@@ -9,9 +9,47 @@
   });
 
 
+//Controls button arrow colors by manipulating the SVG's fillColor attribute
+document.addEventListener('DOMContentLoaded', function() {
+  // Select all img elements with the class "button_icon"
+  var imgElements = document.querySelectorAll('img.button_icon');
+  
+  imgElements.forEach(function(img) {
+      // Fetch the SVG content
+      fetch(img.src)
+          .then(response => response.text())
+          .then(svgText => {
+              // Create a temporary DOM element to hold the SVG
+              var tempDiv = document.createElement('div');
+              tempDiv.innerHTML = svgText;
 
-  // Modifies the top margin between the underline and .button_text
-  document.addEventListener('DOMContentLoaded', function() {
+              // Get the SVG element
+              var svgElement = tempDiv.querySelector('svg');
+
+              if (svgElement) {
+                  // Set the width and height to 1rem
+                  svgElement.style.width = '1rem';
+                  svgElement.style.height = '1rem';
+
+                  // Select all path elements within the SVG
+                  var paths = svgElement.querySelectorAll('path');
+                  
+                  // Iterate through each path element and change the fill attribute to "currentColor"
+                  paths.forEach(function(path) {
+                      path.setAttribute('fill', 'currentColor');
+                  });
+
+                  // Replace the img element with the modified SVG
+                  img.parentNode.replaceChild(svgElement, img);
+              }
+          })
+          .catch(error => console.error('Error fetching SVG:', error));
+  });
+});
+
+
+ // Modifies the top margin between the underline and .button_text
+document.addEventListener('DOMContentLoaded', function() {
     // Select the text element within the specified structure
     var buttonText = document.querySelector('.button_tertiary .button_text');
     
@@ -22,18 +60,25 @@
 });
 
 
-// Add no-scroll class to body when homepage CMS popup is open
+
+//Disables scroll while popup is open
 
 document.addEventListener('DOMContentLoaded', () => {
- document.querySelectorAll('.category_item-link').forEach(trigger => {
-  trigger.addEventListener('click', function(){ 
-    document.querySelectorAll('.body').forEach(target => target.classList.add('no-scroll')); 
-    });
+  document.querySelectorAll('.open-modal').forEach(trigger => {
+   trigger.addEventListener('click', function(){ 
+     document.querySelectorAll('.body').forEach(target => target.classList.add('no-scroll')); 
+     });
+  });
+ 
+  document.querySelectorAll('.close-modal').forEach(trigger => {
+   trigger.addEventListener('click', function(){ 
+     document.querySelectorAll('.body').forEach(target => target.classList.remove('no-scroll')); 
+     });
+  });
  });
 
- document.querySelectorAll('.popup_close-wrapper').forEach(trigger => {
-  trigger.addEventListener('click', function(){ 
-    document.querySelectorAll('.body').forEach(target => target.classList.remove('no-scroll')); 
-    });
- });
-});
+ //History Carousel functionality
+
+
+
+ 

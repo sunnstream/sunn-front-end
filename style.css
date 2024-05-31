@@ -1,0 +1,26 @@
+
+  .w-slide {
+    width: auto;
+    max-width: none;
+  }
+
+  .custom-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .custom-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: currentColor;
+    bottom: -5px;
+    opacity: 0; /* Initially hide the underline */
+    transition: opacity 0.3s; /* Smooth transition */
+  }
+
+  .custom-underline:hover::after {
+    opacity: 1; /* Show the underline on hover */
+  }
