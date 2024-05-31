@@ -3,7 +3,7 @@
 
 //Dropdown Selector
   //Modifies the dropdown selector
-  $('').each(function() {
+  $('.select_sort').each(function() {
     var s = $(this).text();
     $('').append('<option value="' + s + '">' + s + '</option>');
   });
