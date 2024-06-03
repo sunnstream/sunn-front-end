@@ -19,7 +19,7 @@ const swiper = new Swiper('.swiper', {
         }
     });
 
-    const slides = document.querySelectorAll('.swiper-slide');
+    const slides = document.querySelectorAll('.is-slider-main');
 
     if (slides[0]) {
         slides[0].style.width = '28.875rem';
@@ -27,12 +27,12 @@ const swiper = new Swiper('.swiper', {
     }
 
     if (slides[1]) {
-        slides[1].style.width = '${28.875 * 0.3}rem';
-        slides[1].style.height = '${37.75 * 0.3}rem';
+        slides[1].style.width = '22.5rem';
+        slides[1].style.height = '33rem';
     } 
 
     if (slides[2]) {
-        slides[2].style.width = '${28.875 * 0.3 * 0.3}rem';
-        slides[2].style.height = '${37.75 * 0.3 * 0.3}rem';
+        slides[2].style.width = '14.375rem';
+        slides[2].style.height = '20.25rem';
     }   
 
