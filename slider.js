@@ -1,24 +1,21 @@
-//Homepage Carousel using Swiper.js
-
-$(".slider-main_component").each(function(index) {
-    const swiper = new Swiper($(this).find(".swiper") [0], {
-        slidesPerView: 3,
-        spaceBetween: "8%",
-        speed: 700,
-        keyboard: true,
-        mousewheel: {
-            forcetoaxis: true
+const swiper = new Swiper('.swiper', {
+    slidesPerView: 3,
+    spaceBetween: "8%",
+    breakpoints: {
+        320: {
+            slidesPerView: 1, 
+            spaceBetween: "8%",
         },
 
-        slideToClickedSlide: true,
-        
-        
-        
-        });
+        480: {
+            slidesPerView: 2,
+            spaceBetween: "8%",
+        },
 
-});
+        640: {
+            sidesPerView: 3,
+            spaceBetween: "8%",
+        }
+        }
+    });
 
-
-  
-    
-  
