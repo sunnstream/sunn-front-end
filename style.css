@@ -24,3 +24,20 @@
   .custom-underline:hover::after {
     opacity: 1; /* Show the underline on hover */
   }
+
+
+
+  .slider:not([aria-hidden="true"]) {
+    width: 28rem;
+  }
+
+  .slider:not([aria-hidden="true"]) + * {
+    width: 20rem;
+  }
+
+  .slider:not([aria-hidden="true"]) + * + * {
+    width: 10rem;
+  }
+
+
+  
