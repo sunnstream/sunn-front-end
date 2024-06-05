@@ -91,13 +91,13 @@ document.addEventListener('DOMContentLoaded', () => {
   let slide4 = document.querySelector('.gallery_mask .w-slide[aria-label="4 of 4"]');
 
   if (slide2) {
-    slide2.style.transform = "scale(0.5)";
+    slide2.style.transform = "scale(0.75)";
   }
   if (slide3) {
     slide3.style.transform = "scale(0.5)";
   }
   if (slide4) {
-    slide4.style.transform = "scale(0.5)";
+    slide4.style.transform = "scale(0.25)";
   }
 });
 
