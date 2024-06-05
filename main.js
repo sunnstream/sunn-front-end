@@ -78,28 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
  });
 
 
- //Scales the Homepage slider based on Aria-Label.
- document.addEventListener('DOMContentLoaded', function() {
-
-  let slide1 = document.querySelector('.gallery_mask .w-slide[aria-label="1 of 4"]');
-  if (slide1) {
-    slide1.style.transform = "scale(1)";
-  }
-
-  let slide2 = document.querySelector('.gallery_mask .w-slide[aria-label="2 of 4"]');
-  let slide3 = document.querySelector('.gallery_mask .w-slide[aria-label="3 of 4"]');
-  let slide4 = document.querySelector('.gallery_mask .w-slide[aria-label="4 of 4"]');
-
-  if (slide2) {
-    slide2.style.transform = "scale(0.75)";
-  }
-  if (slide3) {
-    slide3.style.transform = "scale(0.5)";
-  }
-  if (slide4) {
-    slide4.style.transform = "scale(0.25)";
-  }
-});
 
 
 
