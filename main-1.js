@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Disables scroll while popup is open
     document.querySelectorAll('.open-modal').forEach(trigger => {
       trigger.addEventListener('click', function() { 
-        document.querySelectorAll('.body').forEach(target => target.classList.add('no-scroll')); 
+        document.querySelectorAll('.body').forEach(target => target.classList.add('is-no-scroll')); 
       });
     });
   
