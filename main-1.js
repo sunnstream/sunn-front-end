@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     document.querySelectorAll('.close-modal').forEach(trigger => {
       trigger.addEventListener('click', function() { 
-        document.querySelectorAll('.body').forEach(target => target.classList.remove('no-scroll')); 
+        document.querySelectorAll('.body').forEach(target => target.classList.remove('is-no-scroll')); 
       });
     });
   
