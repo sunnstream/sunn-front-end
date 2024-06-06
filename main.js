@@ -1,15 +1,19 @@
-//This is where all non-Finsweet javascript for front-end interactions will live. 
-
-
-//Dropdown Selector
-  //Modifies the dropdown selector
-  $('.select_sort').each(function() {
-    var s = $(this).text();
-    $('').append('<option value="' + s + '">' + s + '</option>');
+//Disables scroll while popup is open
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.open-modal').forEach(trigger => {
+   trigger.addEventListener('click', function(){ 
+     document.querySelectorAll('.body').forEach(target => target.classList.add('no-scroll')); 
+     });
   });
+ 
+  document.querySelectorAll('.close-modal').forEach(trigger => {
+   trigger.addEventListener('click', function(){ 
+     document.querySelectorAll('.body').forEach(target => target.classList.remove('no-scroll')); 
+     });
+  });
+ });
 
-
-//Controls button arrow colors by manipulating the SVG's fillColor attribute
+ //Controls button arrow colors by manipulating the SVG's fillColor attribute
 document.addEventListener('DOMContentLoaded', function() {
   // Select all img elements with the class "button_icon"
   var imgElements = document.querySelectorAll('img.button_icon');
@@ -47,38 +51,29 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+ //Gallery Slider functionality: https://swiperjs.com/
+const gallerySlider = new Swiper(".swiper.is-gallery"), {
+  loop: true,
+  slidesPerView: 2,
+  centeredSlides: true,
+  speed: 800,
+  grabCursor: true,
+  paralax: true,
+  navigation: {
+      nextEl: ".swiper-btn-next",
+      prevEl: ".swiper-btn-prev"
+  }};
+  
+//Dropdown Selector
+//Modifies the dropdown selector
 
- // Modifies the top margin between the underline and .button_text
-document.addEventListener('DOMContentLoaded', function() {
-    // Select the text element within the specified structure
-    var buttonText = document.querySelector('.button_tertiary .button_text');
-    
-    if (buttonText) {
-        // Add the custom underline class
-        buttonText.classList.add('custom-underline');
-    }
-});
-
-
-
-//Disables scroll while popup is open
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.open-modal').forEach(trigger => {
-   trigger.addEventListener('click', function(){ 
-     document.querySelectorAll('.body').forEach(target => target.classList.add('no-scroll')); 
-     });
-  });
- 
-  document.querySelectorAll('.close-modal').forEach(trigger => {
-   trigger.addEventListener('click', function(){ 
-     document.querySelectorAll('.body').forEach(target => target.classList.remove('no-scroll')); 
-     });
-  });
- });
-
-
-
-
-
- 
+  document.querySelectorAll('.select_sort').forEach(function(element) {
+      var s = element.textContent;
+      var option = document.createElement('option');
+      option.value = s;
+      option.textContent = s;
+      // Assuming there is a select element with id "mySelect"
+      document.getElementById('mySelect').appendChild(option);
+    });
+  
+  
