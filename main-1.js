@@ -1,3 +1,5 @@
+alert("Hello, world!");
+
 document.addEventListener('DOMContentLoaded', () => {
     // Disables scroll while popup is open
     document.querySelectorAll('.open-modal').forEach(trigger => {
