@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const titleSlider = new Swiper(".swiper.is-slider.is-film-title", {
     loop: true,
-    slidesPerView: 4,
+    slidesPerView: 'auto',
     speed: 800,
     grabCursor: true,
     navigation: {
