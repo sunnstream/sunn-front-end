@@ -71,8 +71,33 @@ document.addEventListener('DOMContentLoaded', () => {
       var option = document.createElement('option');
       option.value = s;
       option.textContent = s;
-      // Assuming there is a select element with id "mySelect"
-      document.getElementById('mySelect').appendChild(option);
+      document.getElementById('mySelect').appendChild(option); // Assuming there is a select element with id "mySelect"
     });
   });
   
+
+  //Card truncation
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const maxLength = 100; // Sets the maximum length of the truncated text
+    const truncateElements = document.querySelectorAll('.truncate');
+  
+    truncateElements.forEach(element => {
+      if (element.textContent.length > maxLength) {
+        element.textContent = element.textContent.substring(0, maxLength) + '...';
+      }
+    });
+  });
+
+  //Swiper JS - Standard Title Slider
+
+  const titleSlider = new Swiper(".swiper.is-slider.is-film-title", {
+    loop: true,
+    slidesPerView: 4,
+    speed: 800,
+    grabCursor: true,
+    navigation: {
+      nextEl: ".swiper-btn-next",
+      prevEl: ".swiper-btn-prev"
+    }
+  });
