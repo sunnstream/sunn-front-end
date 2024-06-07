@@ -102,4 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nextEl: ".swiper-btn-next",
       prevEl: ".swiper-btn-prev"
     }
+
+    console.log(".swiper-btn-next");
+
   });
