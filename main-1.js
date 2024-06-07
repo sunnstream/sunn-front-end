@@ -75,8 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  
-  
 
   //Card truncation
 
@@ -93,16 +91,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //Swiper JS - Standard Title Slider
 
-  const titleSlider = new Swiper(".swiper.is-slider.is-film-title", {
+const titleSlider = new Swiper(".swiper.is-slider.is-film-title", {
     loop: true,
     slidesPerView: 'auto',
     speed: 800,
     grabCursor: true,
     navigation: {
-      nextEl: ".swiper-btn-next",
-      prevEl: ".swiper-btn-prev"
+        nextEl: ".swiper-btn-next",
+        prevEl: ".swiper-btn-prev"
     }
-
-    console.log(".swiper-btn-next");
-
-  });
+});
