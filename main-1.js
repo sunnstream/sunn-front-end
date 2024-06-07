@@ -74,6 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('mySelect').appendChild(option); // Assuming there is a select element with id "mySelect"
     });
   });
+
+  
   
 
   //Card truncation
