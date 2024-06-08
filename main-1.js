@@ -1,4 +1,4 @@
-alert("Hello, world!");
+
 
 document.addEventListener('DOMContentLoaded', () => {
     // Disables scroll while popup is open
@@ -50,7 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error fetching SVG:', error));
     });
   
-    // Gallery Slider functionality: https://swiperjs.com/
+//Swiper JS Slider Functionlities: https://swiperjs.com/
+
+    // Gallery Slider functionality 
     const gallerySlider = new Swiper(".swiper.is-gallery", {
       loop: true,
       slidesPerView: 2,
@@ -62,7 +64,17 @@ document.addEventListener('DOMContentLoaded', () => {
         nextEl: ".swiper-btn-next",  
         prevEl: ".swiper-btn-prev"   
       }
-    });
+    })
+
+      //Titles Slider functionality
+  const titleSlider = new Swiper(".swiper.is-slider", {
+    loop: true,
+    slidesPerView: 'auto',
+    navigation: {
+        nextEl: ".swiper-btn-next",
+        prevEl: ".swiper-btn-prev"
+    }
+});
     
     // Dropdown Selector
     // Modifies the dropdown selector
@@ -89,6 +101,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  //Swiper JS - Standard Title Slider
 
 
