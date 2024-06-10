@@ -13,6 +13,23 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.body').forEach(target => target.classList.remove('is-no-scroll')); 
       });
     });
+
+    //Copyright Date (Year) update
+function updateCopyrightYear() {
+  // Get the current year
+  const currentYear = new Date().getFullYear();
+  
+  // Select all elements with the class "copyright-date"
+  const copyrightElements = document.querySelectorAll('.copyright-date');
+  
+  // Update the text content of each element with the current year
+  copyrightElements.forEach(element => {
+      element.textContent = currentYear;
+  });
+}
+
+// Run the function to update the copyright year when the page loads
+window.onload = updateCopyrightYear;
   
     // Controls button arrow colors by manipulating the SVG's fillColor attribute
     // Combined DOMContentLoaded event listener for efficiency
